@@ -9,6 +9,15 @@ Sub GetData()
     Dim scrapedText As String
     timeout = 15000
     
+    Dim fso As Object
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    Dim oFile As Object
+    Set oFile = fso.CreateTextFile("U:\")
+    oFile.Write
+    oFile.Close
+    Set fso = Nothing
+    Set oFile = Nothing
+    
     Set ibmCurrentTerminal = ThisFrame.SelectedView.control
     Set ibmCurrentScreen = ibmCurrentTerminal.screen
     
